@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+						https://www.springframework.org/schema/beans/spring-beans.xsd
+						http://www.springframework.org/schema/context 
+						https://www.springframework.org/schema/context/spring-context.xsd">
+
+ 	
+ 	<!-- SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-mm-dd hh:mm:ss") -->
+ 	<!-- 우리가 직접 만든 클래스가 아닌, 이렇게 자바에 내장된 클래스의 경우 코드 방식으로 할 수 없어서 xml -->
+ 	<bean id="dateFormat" class="java.text.SimpleDateFormat">
+ 		<constructor-arg value="yyyy-mm-dd hh:mm:ss" />
+ 	</bean>
+ 	
+ 	
+ 	<!--  com.example.spring.ioc 패키지에 포함된 클래스에 적용된 annotation을 반영해서 객체 생성하라는 의미 (컨테이너에게 알려주는 것) -->
+ 	<context:component-scan base-package="com.example.spring.ioc" />
+ 	
+</beans>
